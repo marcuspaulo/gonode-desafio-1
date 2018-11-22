@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 // redirecionamento);
 app.post('/check', logMiddleware, (req, res) => {
   var inputAge = req.body.age
-  if (inputAge > 18) {
+  if (inputAge >= 18) {
     res.redirect(`/major?age=${inputAge}`)
   } else {
     res.redirect(`/minor?age=${inputAge}`)
